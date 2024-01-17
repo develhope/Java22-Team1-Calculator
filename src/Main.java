@@ -21,11 +21,10 @@ public class Main {
 
         switch (scelta){
             case 1:
-              int somma= x+y;
-                System.out.println("la somma e' : "+ somma);
+
                break;
             case 2:
-                int
+
 
 
         }
