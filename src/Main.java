@@ -24,6 +24,7 @@ public class Main {
               int somma= x+y;
                 System.out.println("la somma e' : "+ somma);
                break;
+            case 2:
 
 
         }
