@@ -25,6 +25,7 @@ public class Main {
                 System.out.println("la somma e' : "+ somma);
                break;
             case 2:
+                int
 
 
         }
