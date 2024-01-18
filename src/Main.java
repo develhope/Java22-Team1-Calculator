@@ -45,7 +45,7 @@ public class Main {
                 System.out.println("I numeri sono: ");
                 break;
             case 6:
-                System.out.println("L' elevazione alla potenza dei numeri: " + num1 + " di " + num2 + " = ");
+                System.out.println("L' elevazione alla potenza dei numeri: " + num1 + " di " + num2 + " = " + exponentiation(num1, num2));
                 break;
         }
     }
