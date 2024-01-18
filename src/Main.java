@@ -17,6 +17,7 @@ public class Main {
         System.out.println("Premi 2 per la sottrazione");
         System.out.println("Premi 3 per la divisione");
         System.out.println("Premi 4 per la moltiplicazione");
+        System.out.println("Premi 5 per sapere se è un numero pari o dipari:");
         int scelta = sc.nextInt();
         switch (scelta){
             case 1:
@@ -27,7 +28,6 @@ public class Main {
         }
     }
     public static double somma(double x, double y){
-        double add = x + y;
-        return add;
+        return x + y;
     }
 }
