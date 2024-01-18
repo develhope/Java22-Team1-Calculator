@@ -15,34 +15,34 @@ public class Main {
         int scelta = sc.nextInt();
 
         System.out.println("Inserisci il primo numero:");
-        double x=sc.nextDouble();
+        double num1=sc.nextDouble();
 
         System.out.println("Inserisci il secondo numero");
-        double y=sc.nextDouble();
+        double num2=sc.nextDouble();
 
 
         switch (scelta){
             case 1:
-                System.out.println("La somma dei numeri: " + x + " + " + y + " = " + somma(x,y));
+                System.out.println("La somma dei numeri: " + x + " + " + y + " = " + somma(num1,num2));
                 break;
             case 2:
-                System.out.println("La sottrazione dei numeri: " + x + " - " + y + " = " + (x,y));
+                System.out.println("La sottrazione dei numeri: " + x + " - " + y + " = " + subtraction(num1,num2));
                 break;
             case 3:
-                System.out.println("La divisione dei numeri: " + x + " / " + y + " = " + (x,y));
+                System.out.println("La divisione dei numeri: " + x + " / " + y + " = " + (num1,num2));
                 break;
             case 4:
-                System.out.println("La moltiplicazione dei numeri: " + x + " * " + y + " = " + (x,y));
+                System.out.println("La moltiplicazione dei numeri: " + x + " * " + y + " = " + (num1,num2));
                 break;
             case 5:
                 System.out.println("I numeri sono: ");
                 break;
             case 6:
-                System.out.println("L' elevazione alla potenza dei numeri: " + x + " di " + y + " = " +(x,y));
+                System.out.println("L' elevazione alla potenza dei numeri: " + x + " di " + y + " = " +(num1,num2));
                 break;
         }
     }
-    public static double somma(double x, double y){
-        return x + y;
+    public static double somma(double num1, double num2){
+        return num1 + num2;
     }
 }
