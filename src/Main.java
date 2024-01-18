@@ -21,16 +21,19 @@ public class Main {
         System.out.println("Inserisci il secondo numero");
         double num2=sc.nextDouble();
 
+        double [] divisione = division (num1,num2);
+        double quoziente = divisione[0];
+        double resto = divisione[1];
 
         switch (scelta){
             case 1:
-                System.out.println("La somma dei numeri: " + num1 + " + " + num2 + " = " + somma(num1,num2));
+                System.out.println("La somma dei numeri: " + num1 + " + " + num2 + " = " + sum(num1,num2));
                 break;
             case 2:
                 System.out.println("La sottrazione dei numeri: " + num1 + " - " + num2 + " = " + subtraction(num1,num2));
                 break;
             case 3:
-                System.out.println("La divisione dei numeri: " + num1 + " / " + num2 + " = " + Arrays.toString(division(num1, num2)));
+                System.out.println("La divisione dei numeri: " + num1 + " / " + num2 + " : " + " quoziente = " + quoziente + " resto = " + resto);
                 break;
             case 4:
                 System.out.println("La moltiplicazione dei numeri: " + num1 + " * " + num2 + " = " + multiplication(num1,num2));
@@ -39,11 +42,11 @@ public class Main {
                 System.out.println("I numeri sono: ");
                 break;
             case 6:
-                System.out.println("L' elevazione alla potenza dei numeri: " + num1 + " di " + num2 + " = " +(num1,num2));
+                System.out.println("L' elevazione alla potenza dei numeri: " + num1 + " di " + num2 + " = ");
                 break;
         }
     }
-    public static double somma(double num1, double num2){
+    public static double sum(double num1, double num2){
         return num1 + num2;
     }
 
