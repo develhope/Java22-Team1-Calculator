@@ -6,17 +6,22 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-
         System.out.println("Programma Calcolatrice: ");
         System.out.println("Scegli l' operazione da effettuare:");
         System.out.println("Premi 1 per la somma");
         System.out.println("Premi 2 per la sottrazione");
         System.out.println("Premi 3 per la divisione");
         System.out.println("Premi 4 per la moltiplicazione");
-
         System.out.println("Premi 5 per sapere se sono numeri pari o dipari:");
         System.out.println("Premi 6 per elevare il primo numero alla potenza del secondo:");
         int scelta = sc.nextInt();
+
+        if(scelta == 5) {
+            System.out.println("Inserisci il numero");
+            int num3=sc.nextInt();
+            oddOrEven(num3);
+            return;
+        }
 
         System.out.println("Inserisci il primo numero:");
         double num1=sc.nextDouble();
