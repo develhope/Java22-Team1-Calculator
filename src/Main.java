@@ -7,10 +7,10 @@ public class Main {
         System.out.println("Programma calcolatrice: ");
 
         System.out.println("Inserisci il primo numero:");
-        int x=sc.nextInt();
+        double num1=sc.nextInt();
 
         System.out.println("Inserisci il secondo numero");
-        int y=sc.nextInt();
+        double num2=sc.nextInt();
 
         System.out.println("Scegli l' operazione da effettuare:");
         System.out.println("Premi 1 per la somma");
@@ -19,14 +19,7 @@ public class Main {
         System.out.println("Premi 4 per la moltiplicazione");
         int scelta = sc.nextInt();
 
-        switch (scelta){
-            case 1:
-              int somma= x+y;
-                System.out.println("la somma e' : "+ somma);
-               break;
 
-
-        }
 
 
 
