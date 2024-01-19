@@ -70,7 +70,7 @@ public class Main {
     public static double multiplication (double num1, double num2){
         return num1 * num2;
     }
-
+  
     public static double exponentiation(double base, double exponent) {
         double result = 1;
 
@@ -87,3 +87,5 @@ public class Main {
         }
     }
 }
+
+
