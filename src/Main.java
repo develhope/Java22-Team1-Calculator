@@ -15,7 +15,7 @@ public class Main {
         System.out.println("Premi ^ per elevare il primo numero alla potenza del secondo:");
         String scelta = sc.next();
 
-        if(scelta == "%") {
+        if(scelta.equals("%")) {
             System.out.println("Inserisci il numero");
             int num3=sc.nextInt();
             oddOrEven(num3);
@@ -45,9 +45,6 @@ public class Main {
             case "*":
                 System.out.println("La moltiplicazione dei numeri: " + num1 + " * " + num2 + " = " + multiplication(num1,num2));
                 break;
-            case "%":
-                System.out.println("I numeri sono: " );
-                break;
             case "^":
                 System.out.println("L' elevazione alla potenza dei numeri: " + num1 + " di " + num2 + " = " + exponentiation(num1, num2));
                 break;
@@ -56,11 +53,9 @@ public class Main {
     public static double sum(double num1, double num2){
         return num1 + num2;
     }
-
     public static double subtraction(double num1, double num2) {
         return num1 - num2;
     }
-
     public static double[] division (double num1, double num2) {
         double quoziente = num1 / num2;
         double resto = num1 % num2;
