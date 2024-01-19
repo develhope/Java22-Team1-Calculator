@@ -1,5 +1,8 @@
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Arrays;
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -24,40 +27,40 @@ public class Main {
                 break;
             }
         }
-        if(!isAllowed) {
+        if (!isAllowed) {
             System.out.println("Character was not allowed");
             return;
         }
 
-        if(scelta.equals("%")) {
+        if (scelta.equals("%")) {
             System.out.println("Inserisci il numero");
-            int num3=sc.nextInt();
+            int num3 = sc.nextInt();
             oddOrEven(num3);
             return;
         }
 
         System.out.println("Inserisci il primo numero:");
-        double num1=sc.nextDouble();
+        double num1 = sc.nextDouble();
 
         System.out.println("Inserisci il secondo numero");
-        double num2=sc.nextDouble();
+        double num2 = sc.nextDouble();
 
-        double [] divisione = division (num1,num2);
+        double[] divisione = division(num1, num2);
         double quoziente = divisione[0];
         double resto = divisione[1];
 
-        switch (scelta){
+        switch (scelta) {
             case "+":
-                System.out.println("La somma dei numeri: " + num1 + " + " + num2 + " = " + sum(num1,num2));
+                System.out.println("La somma dei numeri: " + num1 + " + " + num2 + " = " + sum(num1, num2));
                 break;
             case "-":
-                System.out.println("La sottrazione dei numeri: " + num1 + " - " + num2 + " = " + subtraction(num1,num2));
+                System.out.println("La sottrazione dei numeri: " + num1 + " - " + num2 + " = " + subtraction(num1, num2));
                 break;
             case "/":
                 System.out.println("La divisione dei numeri: " + num1 + " / " + num2 + " : " + " quoziente = " + quoziente + " resto = " + resto);
                 break;
             case "*":
-                System.out.println("La moltiplicazione dei numeri: " + num1 + " * " + num2 + " = " + multiplication(num1,num2));
+                System.out.println("La moltiplicazione dei numeri: " + num1 + " * " + num2 + " = " + multiplication(num1, num2));
                 break;
             case "^":
 
@@ -67,7 +70,7 @@ public class Main {
     }
 
 
-    public static double sum(double num1, double num2){
+    public static double sum(double num1, double num2) {
         return num1 + num2;
 
     }
@@ -76,20 +79,25 @@ public class Main {
         return num1 - num2;
     }
 
-    public static double[] division (double num1, double num2) {
+    public static double[] division(double num1, double num2) {
+        if (num2 == 0) {
+            System.out.println("warning: number not divisible by zero");
+            return new double[]{0, 0};
+        }
         double quoziente = num1 / num2;
         double resto = num1 % num2;
 
         return new double[]{quoziente, resto};
     }
-    public static double multiplication (double num1, double num2){
+
+    public static double multiplication(double num1, double num2) {
         return num1 * num2;
     }
 
     public static double exponentiation(double base, double exponent) {
         double result = 1;
 
-        for(int i = 0; i < exponent; i++) {
+        for (int i = 0; i < exponent; i++) {
             result *= base;
         }
 
@@ -99,7 +107,7 @@ public class Main {
 
 
     public static void oddOrEven(int num) {
-        if(num % 2 == 0) {
+        if (num % 2 == 0) {
             System.out.println("Number " + num + " is even");
         } else {
             System.out.println("Number " + num + " is odd");
