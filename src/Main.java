@@ -15,6 +15,10 @@ public class Main {
         System.out.println("Premi ^ per elevare il primo numero alla potenza del secondo:");
         String scelta = sc.next();
 
+        if (!scelta.equals("+") && !scelta.equals("-") && !scelta.equals("/") && !scelta.equals("%") && !scelta.equals("^") && !scelta.equals("*")){
+            System.out.println("Carattere non valido!!!");
+            return;
+        }
         if(scelta.equals("%")) {
             System.out.println("Inserisci il numero");
             int num3=sc.nextInt();
