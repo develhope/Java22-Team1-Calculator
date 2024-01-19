@@ -15,7 +15,22 @@ public class Main {
         System.out.println("Premi ^ per elevare il primo numero alla potenza del secondo:");
         String scelta = sc.next();
 
-        if(scelta == "%") {
+        String[] allowedChar = {"%", "+", "-", "/", "^", "*"};
+
+        boolean isAllowed = false;
+
+        for (String allowed : allowedChar) {
+            if (scelta.equals(allowed)) {
+                isAllowed = true;
+                break;
+            }
+        }
+        if(!isAllowed) {
+            System.out.println("Character was not allowed");
+            return;
+        }
+
+        if(scelta.equals("%")) {
             System.out.println("Inserisci il numero");
             int num3=sc.nextInt();
             oddOrEven(num3);
@@ -44,9 +59,6 @@ public class Main {
                 break;
             case "*":
                 System.out.println("La moltiplicazione dei numeri: " + num1 + " * " + num2 + " = " + multiplication(num1,num2));
-                break;
-            case "%":
-                System.out.println("I numeri sono: " );
                 break;
             case "^":
                 System.out.println("L' elevazione alla potenza dei numeri: " + num1 + " di " + num2 + " = " + exponentiation(num1, num2));
