@@ -46,7 +46,7 @@ public class Main {
                 System.out.println("La moltiplicazione dei numeri: " + num1 + " * " + num2 + " = " + multiplication(num1,num2));
                 break;
             case "%":
-                System.out.println("I numeri sono: ");
+                System.out.println("I numeri sono: " );
                 break;
             case "^":
                 System.out.println("L' elevazione alla potenza dei numeri: " + num1 + " di " + num2 + " = " + exponentiation(num1, num2));
