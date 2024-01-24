@@ -54,5 +54,13 @@ public class Main {
         }
         return somma;
     }
+
+    public static double subtraction(double[] num) {
+        double sum = 0;
+        for (int i = 0; i < num.length; i++) {
+            sum -= num[i];
+        }
+        return sum;
+    }
 }
 
