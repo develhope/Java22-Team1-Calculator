@@ -38,18 +38,25 @@ public class Main {
         double[][] evensAndOdds = oddOrEven(numeri);
 
         boolean isAllowed = false;
+
         String[] allowedChar = {"%", "+", "-", "/", "^", "*"};
+
         for (String allowed : allowedChar) {
             if (scelta.equals(allowed)) {
                 isAllowed = true;
                 break;
             }
         }
+
+        if (!isAllowed) {
+            System.out.println("Character was not allowed");
+            return;
+        }
+
         switch (scelta) {
             case "+":
                 System.out.println("La somma dei numeri: " + Arrays.toString(numeri) + " = " + addizione(numeri));
                 break;
-
             case "-":
                 System.out.println("La sottrazione dei numeri: " + Arrays.toString(numeri) + " = " + sottrazione(numeri));
                 break;
@@ -65,9 +72,6 @@ public class Main {
             case "$":
                 System.out.println("I numeri pari sono: " + Arrays.toString(evensAndOdds[0]) + " ed i numeri dispari sono: " + Arrays.toString(evensAndOdds[1]));
                 break;
-            default:
-                System.out.println("Scelta non consentita!");
-
         }
 
     }
