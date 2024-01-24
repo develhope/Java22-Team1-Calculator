@@ -18,7 +18,7 @@ public class Main {
         System.out.println("Premi / per la divisione");
         System.out.println("Premi * per la moltiplicazione");
         System.out.println("Premi % per conoscere il modulo:");
-        System.out.println("Premi $ per sapere se i numeri sono pari o disperi:");
+        System.out.println("Premi $ per sapere se i numeri sono pari o dispari:");
 
         String scelta = sc.next();
         double[] numeri={6.1,5,4,3,2};
@@ -78,14 +78,6 @@ public class Main {
         return somma;
     }
 
-
-    public static double subtraction(double[] num) {
-        double sum = 0;
-        for (int i = 0; i < num.length; i++) {
-            sum -= num[i];
-        }
-        return sum;
-    }
     public static double[][] oddOrEven(double[] num) {
         double[] evens = new double[0];
         double[] odds = new double[0];
