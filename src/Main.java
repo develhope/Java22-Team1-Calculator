@@ -22,6 +22,11 @@ public class Main {
         String scelta = sc.next();
         double[] numeri={3,4,7,4,1,8};
         double sum = addizione(numeri);
+        double[][] evensAndOdds = oddOrEven(numeri);
+        double[] evens = evensAndOdds[0];
+        double[] odds = evensAndOdds[1];
+
+
 
         boolean isAllowed = false;
         String[] allowedChar = {"%", "+", "-", "/", "^", "*"};
@@ -35,15 +40,15 @@ public class Main {
             case "+":
                 System.out.println("La somma dei numeri: " + Arrays.toString(numeri) + " = " + sum);
                 break;
-            case "-":
-                System.out.println("La sottrazione dei numeri: " +  + " = " + subtraction(num1,num2));
-                break;
-            case "/":
-                System.out.println("La divisione dei numeri: " + num1 + " / " + num2 + " : " + " quoziente = " + quoziente + " resto = " + resto);
-                break;
-            case "*":
-                System.out.println("La moltiplicazione dei numeri: " + num1 + " * " + num2 + " = " + multiplication(num1,num2));
-                break;
+//            case "-":
+//                System.out.println("La sottrazione dei numeri: " +  + " = " + subtraction(num1,num2));
+//                break;
+//            case "/":
+//                System.out.println("La divisione dei numeri: " + num1 + " / " + num2 + " : " + " quoziente = " + quoziente + " resto = " + resto);
+//                break;
+//            case "*":
+//                System.out.println("La moltiplicazione dei numeri: " + num1 + " * " + num2 + " = " + multiplication(num1,num2));
+//                break;
         }
 
     }
@@ -62,5 +67,32 @@ public class Main {
         }
         return sum;
     }
+    public static double[][] oddOrEven(double[] num) {
+        double[] evens = new double[0];
+        double[] odds = new double[0];
+
+        for(int i = 0; i < num.length; i++) {
+            if(num[i] % 2 == 0) {
+                double[] temp = new double[evens.length + 1];
+                System.arraycopy(evens, 0, temp, 0, evens.length);
+
+                temp[evens.length] = num[i];
+
+                evens = temp;
+            } else {
+                double[] temp1 = new double[odds.length + 1];
+                System.arraycopy(odds, 0, temp1, 0, odds.length);
+
+                temp1[odds.length] = num[i];
+
+                odds = temp1;
+            }
+
+        }
+        double[][] together = {evens, odds};
+        return together;
+    }
 }
+
+
 
