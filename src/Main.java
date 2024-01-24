@@ -19,7 +19,7 @@ public class Main {
         double[] numeri = new double[numElementi];
 
         for (int i = 0; i < numeri.length; i++) {
-            System.out.println("Scegli prossimo numero");
+            System.out.println("Scegli il numero " + (i + 1) + " di " + numElementi);
             numeri[i] = sc.nextDouble();
         }
 
