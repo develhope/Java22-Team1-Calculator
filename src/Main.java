@@ -13,6 +13,18 @@ public class Main {
 
         System.out.println("Programma Calcolatrice: ");
 
+        System.out.println("Scegli quanti numeri usare");
+        int numElementi = sc.nextInt();
+
+        double[] numeri = new double[numElementi];
+
+        for (int i = 0; i < numeri.length; i++) {
+            System.out.println("Scegli prossimo numero");
+            numeri[i] = sc.nextDouble();
+        }
+
+        System.out.println(Arrays.toString(numeri));
+
         System.out.println("Scegli l'operazione da effettuare:");
         System.out.println("Premi + per la somma");
         System.out.println("Premi - per la sottrazione");
@@ -22,7 +34,7 @@ public class Main {
         System.out.println("Premi $ per sapere se i numeri sono pari o dispari:");
 
         String scelta = sc.next();
-        double[] numeri = {6.1, 5, 4, 3, 2};
+
         double[][] evensAndOdds = oddOrEven(numeri);
 
         boolean isAllowed = false;
