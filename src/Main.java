@@ -1,4 +1,5 @@
 //import org.w3c.dom.ls.LSOutput;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -12,7 +13,7 @@ public class Main {
 
         System.out.println("Programma Calcolatrice: ");
 
-        System.out.println("Scegli l' operazione da effettuare:");
+        System.out.println("Scegli l'operazione da effettuare:");
         System.out.println("Premi + per la somma");
         System.out.println("Premi - per la sottrazione");
         System.out.println("Premi / per la divisione");
@@ -21,20 +22,8 @@ public class Main {
         System.out.println("Premi $ per sapere se i numeri sono pari o dispari:");
 
         String scelta = sc.next();
-        double[] numeri={6.1,5,4,3,2};
-        double sum = addizione(numeri);
-
+        double[] numeri = {6.1, 5, 4, 3, 2};
         double[][] evensAndOdds = oddOrEven(numeri);
-        double[] evens = evensAndOdds[0];
-        double[] odds = evensAndOdds[1];
-
-
-        double molti= moltiplicazione(numeri);
-        double sottraz=sottrazione(numeri);
-        double divis=divisione(numeri);
-        double modul= modulo(numeri);
-
-
 
         boolean isAllowed = false;
         String[] allowedChar = {"%", "+", "-", "/", "^", "*"};
@@ -44,25 +33,25 @@ public class Main {
                 break;
             }
         }
-        switch (scelta){
+        switch (scelta) {
             case "+":
-                System.out.println("La somma dei numeri: " + Arrays.toString(numeri) + " = " + sum);
+                System.out.println("La somma dei numeri: " + Arrays.toString(numeri) + " = " + addizione(numeri));
                 break;
 
             case "-":
-                System.out.println("La sottrazione dei numeri: " + Arrays.toString(numeri) + " = " + sottraz);
+                System.out.println("La sottrazione dei numeri: " + Arrays.toString(numeri) + " = " + sottrazione(numeri));
                 break;
             case "/":
-                System.out.println("La divisione dei numeri: " + Arrays.toString(numeri) + " quoziente = " + divis );
+                System.out.println("La divisione dei numeri: " + Arrays.toString(numeri) + " quoziente = " + divisione(numeri));
                 break;
             case "*":
-                System.out.println("La moltiplicazione dei numeri: " + Arrays.toString(numeri) + " = " + molti);
+                System.out.println("La moltiplicazione dei numeri: " + Arrays.toString(numeri) + " = " + moltiplicazione(numeri));
                 break;
             case "%":
-                System.out.println("Il modulo della divisione dei numeri: " + Arrays.toString(numeri) + "=" + modul);
+                System.out.println("Il modulo della divisione dei numeri: " + Arrays.toString(numeri) + "=" + modulo(numeri));
                 break;
             case "$":
-                System.out.println("I numeri pari sono: " + Arrays.toString(evens) + " ed i numeri dispari sono: " + Arrays.toString(odds) );
+                System.out.println("I numeri pari sono: " + Arrays.toString(evensAndOdds[0]) + " ed i numeri dispari sono: " + Arrays.toString(evensAndOdds[1]));
                 break;
             default:
                 System.out.println("Scelta non consentita!");
@@ -70,8 +59,9 @@ public class Main {
         }
 
     }
-    public static double addizione(double[] num){
-        double somma=num[0];
+
+    public static double addizione(double[] num) {
+        double somma = num[0];
         for (int i = 1; i < num.length; i++) {
             somma += num[i];
         }
@@ -82,8 +72,8 @@ public class Main {
         double[] evens = new double[0];
         double[] odds = new double[0];
 
-        for(int i = 0; i < num.length; i++) {
-            if(num[i] % 2 == 0) {
+        for (int i = 0; i < num.length; i++) {
+            if (num[i] % 2 == 0) {
                 double[] temp = new double[evens.length + 1];
                 System.arraycopy(evens, 0, temp, 0, evens.length);
 
@@ -104,29 +94,32 @@ public class Main {
         return together;
     }
 
-    public static double moltiplicazione(double[] num){
-        double molt=num[0];
+    public static double moltiplicazione(double[] num) {
+        double molt = num[0];
         for (int i = 1; i < num.length; i++) {
             molt *= num[i];
         }
         return molt;
     }
-    public static double sottrazione(double[] num){
-        double sottr=num[0];
+
+    public static double sottrazione(double[] num) {
+        double sottr = num[0];
         for (int i = 1; i < num.length; i++) {
             sottr -= num[i];
         }
         return sottr;
     }
-    public static double divisione(double[] num){
-        double div=num[0];
+
+    public static double divisione(double[] num) {
+        double div = num[0];
         for (int i = 1; i < num.length; i++) {
             div /= num[i];
         }
         return div;
     }
-    public static double modulo(double[] num){
-        double mod=num[0];
+
+    public static double modulo(double[] num) {
+        double mod = num[0];
         for (int i = 1; i < num.length; i++) {
             mod %= num[i];
         }
