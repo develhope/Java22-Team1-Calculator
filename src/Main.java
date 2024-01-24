@@ -17,11 +17,17 @@ public class Main {
         System.out.println("Premi - per la sottrazione");
         System.out.println("Premi / per la divisione");
         System.out.println("Premi * per la moltiplicazione");
-        System.out.println("Premi % per sapere se sono numeri pari o dipari:");
-        System.out.println("Premi ^ per elevare il primo numero alla potenza del secondo:");
+        System.out.println("Premi % per conoscere il modulo:");
+        System.out.println("Premi $ per sapere se i numeri sono pari o disperi:");
+
         String scelta = sc.next();
-        double[] numeri={3,4,7,4,1,8};
+        double[] numeri={6,5,4,3,2};
         double sum = addizione(numeri);
+        double molti= moltiplicazione(numeri);
+        double sottraz=sottrazione(numeri);
+        double divis=divisione(numeri);
+        double modul= modulo(numeri);
+
 
         boolean isAllowed = false;
         String[] allowedChar = {"%", "+", "-", "/", "^", "*"};
@@ -36,23 +42,59 @@ public class Main {
                 System.out.println("La somma dei numeri: " + Arrays.toString(numeri) + " = " + sum);
                 break;
             case "-":
-                System.out.println("La sottrazione dei numeri: " +  + " = " + subtraction(num1,num2));
+                System.out.println("La sottrazione dei numeri: " + Arrays.toString(numeri) + " = " + sottraz);
                 break;
             case "/":
-                System.out.println("La divisione dei numeri: " + num1 + " / " + num2 + " : " + " quoziente = " + quoziente + " resto = " + resto);
+                System.out.println("La divisione dei numeri: " + Arrays.toString(numeri) + " quoziente = " + divis );
                 break;
             case "*":
-                System.out.println("La moltiplicazione dei numeri: " + num1 + " * " + num2 + " = " + multiplication(num1,num2));
+                System.out.println("La moltiplicazione dei numeri: " + Arrays.toString(numeri) + " = " + molti);
                 break;
+            case "%":
+                System.out.println("Il modulo della divisione dei numeri: " + Arrays.toString(numeri) + "=" + modul);
+            case "$":
+                System.out.println("I numeri risultano: "  );
+                break;
+            default:
+                System.out.println("Scelta non consentita!");
         }
 
     }
     public static double addizione(double[] num){
-        double somma=0;
-        for (int i = 0; i < num.length; i++) {
+        double somma=num[0];
+        for (int i = 1; i < num.length; i++) {
             somma += num[i];
         }
         return somma;
     }
+    public static double moltiplicazione(double[] num){
+        double molt=num[0];
+        for (int i = 1; i < num.length; i++) {
+            molt *= num[i];
+        }
+        return molt;
+    }
+    public static double sottrazione(double[] num){
+        double sottr=num[0];
+        for (int i = 1; i < num.length; i++) {
+            sottr -= num[i];
+        }
+        return sottr;
+    }
+    public static double divisione(double[] num){
+        double div=num[0];
+        for (int i = 1; i < num.length; i++) {
+            div /= num[i];
+        }
+        return div;
+    }
+    public static double modulo(double[] num){
+        double mod=num[0];
+        for (int i = 1; i < num.length; i++) {
+            mod %= num[i];
+        }
+        return mod;
+    }
+
 }
 
